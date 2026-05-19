@@ -1,0 +1,612 @@
+/* =======================================================
+   STYLE GLOBAL – UNIVERSITÉ DE TROIS-RIVIÈRES
+   HTML + CSS UNIQUEMENT
+   ======================================================= */
+
+/* ---------- Variables & reset de base ---------- */
+:root {
+    --bg: #f8fafc;
+    --bg-alt: #ffffff;
+    --primary: #2563eb;
+    --primary-dark: #1d4ed8;
+    --accent: #f59e0b;
+    --text: #0f172a;
+    --muted: #6b7280;
+    --border: #e5e7eb;
+    --radius: 14px;
+    --shadow-soft: 0 8px 24px rgba(15, 23, 42, 0.08);
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.6;
+}
+
+/* Réinitialisation simple */
+h1, h2, h3, h4 {
+    margin: 0 0 0.5rem;
+    line-height: 1.25;
+}
+
+p {
+    margin: 0 0 1rem;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+/* ---------- Layout utilitaire ---------- */
+.container {
+    width: min(1100px, 100% - 2rem);
+    margin-inline: auto;
+}
+
+.section {
+    padding: 3.5rem 0;
+}
+
+.section-alt {
+    background: var(--bg-alt);
+}
+
+.section-header {
+    margin-bottom: 2rem;
+    text-align: left;
+}
+
+    .section-header h2,
+    .section-header h1 {
+        font-size: clamp(1.6rem, 2vw + 1rem, 2.1rem);
+    }
+
+    .section-header p {
+        color: var(--muted);
+    }
+
+/* =======================================================
+   HEADER ET NAVIGATION (HAMBURGER 100% CSS)
+   ======================================================= */
+
+.site-header {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    background: rgba(248, 250, 252, 0.95);
+    backdrop-filter: blur(8px);
+    border-bottom: 1px solid var(--border);
+}
+
+.header-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-block: 0.75rem;
+}
+
+/* Marque (logo + texte) */
+.brand {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.brand-logo {
+    width: 40px;
+    height: 40px;
+    border-radius: 12px;
+    background: var(--primary);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.4rem;
+    box-shadow: var(--shadow-soft);
+}
+
+.brand-text {
+    display: flex;
+    flex-direction: column;
+}
+
+.brand-title {
+    font-weight: 700;
+    letter-spacing: 0.02em;
+}
+
+.brand-subtitle {
+    font-size: 0.8rem;
+    color: var(--muted);
+}
+
+/* Navigation principale */
+.site-nav {
+    /* desktop : visible, mobile : géré dans media queries */
+}
+
+.nav-list {
+    display: flex;
+    align-items: center;
+    gap: 1.25rem;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.nav-link {
+    padding: 0.4rem 0.9rem;
+    border-radius: 999px;
+    font-size: 0.95rem;
+    color: var(--muted);
+    transition: background 0.18s ease, color 0.18s ease, transform 0.1s ease;
+}
+
+    .nav-link:hover {
+        background: #e0ecff;
+        color: var(--primary-dark);
+        transform: translateY(-1px);
+    }
+
+    .nav-link.active {
+        background: var(--primary);
+        color: #ffffff;
+    }
+
+/* Checkbox & label pour hamburger (mobile) */
+.nav-toggle-checkbox {
+    display: none;
+}
+
+.nav-toggle-label {
+    display: none; /* visible seulement en mobile */
+    width: 40px;
+    height: 32px;
+    border-radius: 8px;
+    border: 1px solid var(--border);
+    padding: 6px;
+    cursor: pointer;
+    justify-content: center;
+    flex-direction: column;
+    gap: 5px;
+}
+
+    .nav-toggle-label span {
+        display: block;
+        height: 2px;
+        background: var(--text);
+        border-radius: 999px;
+    }
+
+/* Quand le checkbox est coché (mobile), afficher le menu */
+.nav-toggle-checkbox:checked + .nav-toggle-label {
+    background: var(--primary);
+}
+
+    .nav-toggle-checkbox:checked + .nav-toggle-label span {
+        background: #ffffff;
+    }
+
+    .nav-toggle-checkbox:checked + .nav-toggle-label + .site-nav {
+        display: block;
+    }
+
+/* =======================================================
+   HERO (ACCUEIL)
+   ======================================================= */
+
+.hero {
+    background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 40%, #0b1120 100%);
+    color: #ffffff;
+    padding: 3.5rem 0;
+}
+
+.hero-inner {
+    display: grid;
+    grid-template-columns: minmax(0, 1.6fr) minmax(0, 1.2fr);
+    gap: 2.5rem;
+    align-items: center;
+}
+
+.hero-text h1 {
+    font-size: clamp(2rem, 3vw + 1rem, 2.8rem);
+    margin-bottom: 0.75rem;
+}
+
+.hero-subtitle {
+    color: #e5e7eb;
+    max-width: 32rem;
+}
+
+.hero-actions {
+    margin-top: 1.5rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+}
+
+/* Photo dans le hero */
+.hero-photo {
+    width: 100%;
+    border-radius: var(--radius);
+    box-shadow: var(--shadow-soft);
+}
+
+/* Petit cluster de statistiques (si on veut) */
+.hero-illustration {
+    display: grid;
+    gap: 0.75rem;
+}
+
+.hero-card {
+    background: rgba(15, 23, 42, 0.75);
+    border-radius: var(--radius);
+    padding: 1rem 1.2rem;
+    box-shadow: var(--shadow-soft);
+    font-size: 0.95rem;
+}
+
+.hero-stat-big {
+    font-size: 1.4rem;
+    font-weight: 700;
+    margin-bottom: 0.25rem;
+}
+
+/* Animation de fade/slide pour le hero & sections .reveal */
+.hero-intro,
+.reveal {
+    opacity: 0;
+    transform: translateY(18px);
+    animation: fadeUp 0.8s ease-out forwards;
+}
+
+.hero-intro {
+    animation-delay: 0.1s;
+}
+
+.reveal {
+    animation-delay: 0.25s;
+}
+
+@keyframes fadeUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* =======================================================
+   CARTES GÉNÉRIQUES & NEWS
+   ======================================================= */
+
+.cards-grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 1.25rem;
+}
+
+.card {
+    background: var(--bg-alt);
+    border-radius: var(--radius);
+    padding: 1.25rem 1.35rem;
+    border: 1px solid var(--border);
+    box-shadow: var(--shadow-soft);
+    transition: transform 0.12s ease, box-shadow 0.12s ease;
+}
+
+    .card:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 16px 40px rgba(15, 23, 42, 0.18);
+    }
+
+/* Nouvelles */
+.news-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 1.25rem;
+}
+
+.news-card {
+    background: var(--bg-alt);
+    border-radius: var(--radius);
+    border: 1px solid var(--border);
+    padding: 1.2rem 1.3rem;
+    box-shadow: var(--shadow-soft);
+}
+
+.news-date {
+    display: inline-block;
+    font-size: 0.8rem;
+    color: var(--muted);
+    margin-bottom: 0.25rem;
+}
+
+.news-link {
+    font-size: 0.9rem;
+    color: var(--primary-dark);
+    font-weight: 600;
+}
+
+/* =======================================================
+   PROFESSEURS
+   ======================================================= */
+
+.prof-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 1.25rem;
+}
+
+.prof-card {
+    background: var(--bg-alt);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow-soft);
+    padding: 1.25rem 1.35rem;
+    text-align: center;
+}
+
+/* Avatar avec image locale */
+.prof-photo {
+    width: 80px;
+    height: 80px;
+    border-radius: 999px;
+    object-fit: cover;
+    margin-inline: auto;
+    margin-bottom: 0.75rem;
+    box-shadow: var(--shadow-soft);
+}
+
+.prof-name {
+    margin-bottom: 0.15rem;
+}
+
+.prof-dept {
+    font-size: 0.9rem;
+    color: var(--muted);
+}
+
+.prof-email {
+    font-size: 0.9rem;
+    margin-bottom: 0.5rem;
+}
+
+/* =======================================================
+   GALERIE VIE ÉTUDIANTE (AVEC IMAGES LOCALES)
+   ======================================================= */
+
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 1.25rem;
+}
+
+.gallery-card {
+    background: var(--bg-alt);
+    border-radius: var(--radius);
+    overflow: hidden;
+    box-shadow: var(--shadow-soft);
+}
+
+    .gallery-card img {
+        width: 100%;
+        display: block;
+    }
+
+.gallery-card-body {
+    padding: 0.9rem 1rem 1.1rem;
+}
+
+    .gallery-card-body h3 {
+        margin-bottom: 0.3rem;
+    }
+
+    .gallery-card-body p {
+        margin: 0;
+        font-size: 0.9rem;
+        color: var(--muted);
+    }
+
+/* =======================================================
+   BOUTONS
+   ======================================================= */
+
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.6rem 1.2rem;
+    border-radius: 999px;
+    border: 1px solid transparent;
+    font-size: 0.95rem;
+    font-weight: 600;
+    cursor: pointer;
+    background: #ffffff;
+    color: var(--primary-dark);
+    box-shadow: var(--shadow-soft);
+    transition: background 0.15s ease, color 0.15s ease, transform 0.1s ease, box-shadow 0.15s ease;
+}
+
+.btn-primary {
+    background: var(--primary);
+    color: #ffffff;
+}
+
+    .btn-primary:hover {
+        background: var(--primary-dark);
+        transform: translateY(-1px);
+        box-shadow: 0 16px 40px rgba(37, 99, 235, 0.4);
+    }
+
+.btn-secondary {
+    background: #ffffff;
+    color: var(--primary-dark);
+    border-color: var(--border);
+}
+
+    .btn-secondary:hover {
+        background: #e0ecff;
+        transform: translateY(-1px);
+    }
+
+/* =======================================================
+   FOOTER
+   ======================================================= */
+
+.site-footer {
+    border-top: 1px solid var(--border);
+    background: #ffffff;
+}
+
+.footer-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-block: 1rem;
+    font-size: 0.9rem;
+}
+
+.footer-link {
+    color: var(--primary-dark);
+}
+
+/* =======================================================
+   RESPONSIVE DESIGN
+   ======================================================= */
+
+/* Tablette */
+@media (max-width: 1024px) {
+    .hero-inner {
+        grid-template-columns: minmax(0, 1.3fr) minmax(0, 1fr);
+    }
+
+    .cards-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .news-grid,
+    .prof-grid,
+    .gallery-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+    .header-inner {
+        align-items: flex-start;
+    }
+
+    /* Afficher le hamburger, cacher la nav en mobile */
+    .nav-toggle-label {
+        display: inline-flex;
+    }
+
+    .site-nav {
+        margin-top: 0.5rem;
+        display: none;
+        width: 100%;
+    }
+
+    .nav-list {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.35rem;
+        padding-top: 0.25rem;
+    }
+
+    .hero-inner {
+        grid-template-columns: 1fr;
+    }
+
+    .cards-grid,
+    .news-grid,
+    .prof-grid,
+    .gallery-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .footer-inner {
+        flex-direction: column;
+        gap: 0.4rem;
+        text-align: center;
+    }
+}
+/* =============================
+   FORMULAIRE (PAGE CONTACT)
+   ============================= */
+
+.contact-card {
+    background: var(--bg-alt);
+    border-radius: var(--radius);
+    padding: 2rem;
+    max-width: 900px;
+    margin: auto;
+    box-shadow: var(--shadow-soft);
+}
+
+.contact-form {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.2rem 1.5rem;
+}
+
+    .contact-form label {
+        font-weight: 600;
+        margin-bottom: 0.2rem;
+        display: block;
+    }
+
+    .contact-form input,
+    .contact-form select,
+    .contact-form textarea {
+        width: 100%;
+        padding: 0.65rem;
+        border-radius: 8px;
+        border: 1px solid var(--border);
+        font-size: 0.95rem;
+    }
+
+    .contact-form textarea {
+        grid-column: span 2;
+        resize: vertical;
+        min-height: 120px;
+    }
+
+.contact-buttons {
+    grid-column: span 2;
+    display: flex;
+    gap: 1rem;
+    justify-content: flex-start;
+    margin-top: 0.5rem;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .contact-form {
+        grid-template-columns: 1fr;
+    }
+
+    .contact-buttons {
+        grid-column: span 1;
+        flex-direction: column;
+    }
+}
+

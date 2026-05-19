@@ -1,0 +1,136 @@
+﻿<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Université de Trois-Rivières – Contact & Inscription</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body id="top">
+
+    <!-- HEADER -->
+    <header class="site-header">
+        <div class="container header-inner">
+            <a href="index.html" class="brand">
+                <span class="brand-logo">📞</span>
+                <span class="brand-text">
+                    <span class="brand-title">Contact & Inscription</span>
+                    <span class="brand-subtitle">Université de Trois-Rivières</span>
+                </span>
+            </a>
+
+            <input type="checkbox" id="nav-toggle" class="nav-toggle-checkbox">
+            <label for="nav-toggle" class="nav-toggle-label">
+                <span></span><span></span><span></span>
+            </label>
+
+            <nav class="site-nav">
+                <ul class="nav-list">
+                    <li><a href="index.html" class="nav-link">Accueil</a></li>
+                    <li><a href="contact.html" class="nav-link active">Contact & Inscription</a></li>
+                    <li><a href="professeurs.html" class="nav-link">Professeurs</a></li>
+                    <li><a href="departements.html" class="nav-link">Départements & Programmes</a></li>
+                    <li><a href="vie-etudiante.html" class="nav-link">Vie étudiante</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- FORMULAIRE -->
+    <section class="section section-alt reveal">
+        <div class="container">
+            <header class="section-header">
+                <h1>Formulaire de contact et d’inscription 📝</h1>
+                <p>Remplissez ce formulaire pour poser vos questions ou débuter votre démarche d’admission.</p>
+            </header>
+
+            <div class="contact-card">
+                <form class="contact-form">
+
+                    <div>
+                        <label>Prénom *</label>
+                        <input type="text" required>
+                    </div>
+
+                    <div>
+                        <label>Nom *</label>
+                        <input type="text" required>
+                    </div>
+
+                    <div>
+                        <label>Courriel *</label>
+                        <input type="email" required>
+                    </div>
+
+                    <div>
+                        <label>Téléphone *</label>
+                        <input type="tel" placeholder="+1 514 555-1234" required>
+                    </div>
+
+                    <div>
+                        <label>Pays d’origine *</label>
+                        <input type="text" required>
+                    </div>
+
+                    <div>
+                        <label>Choix du programme *</label>
+                        <select required>
+                            <option value="">-- Sélectionnez --</option>
+                            <option>Baccalauréat en informatique</option>
+                            <option>Technologies de l'information</option>
+                            <option>Génie mécanique</option>
+                            <option>Psychoéducation</option>
+                        </select>
+                    </div>
+
+                    <div>
+                        <label>Type de demande *</label>
+                        <select required>
+                            <option value="">-- Sélectionnez --</option>
+                            <option>Demande d'information</option>
+                            <option>Inscription</option>
+                            <option>Visite du campus</option>
+                        </select>
+                    </div>
+
+                    <div style="grid-column: span 2;">
+                        <label>Message *</label>
+                        <textarea placeholder="Précisez votre projet d'études, vos questions, etc." required></textarea>
+                    </div>
+
+                    <div class="contact-buttons">
+                        <button type="submit" class="btn btn-primary">Envoyer la demande</button>
+                        <button type="reset" class="btn btn-secondary">Réinitialiser</button>
+                    </div>
+
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- COORDONNÉES -->
+    <section class="section reveal">
+        <div class="container">
+            <header class="section-header">
+                <h2>Coordonnées de l’université 📍</h2>
+            </header>
+
+            <div class="card" style="max-width: 600px; margin: auto;">
+                <p><strong>Université de Trois-Rivières</strong></p>
+                <p>1234, boulevard du Savoir<br>Trois-Rivières (Québec) H1H 1H1</p>
+
+                <p>Téléphone : (819) 555-1234</p>
+                <p>Courriel : info@u3r.ca</p>
+            </div>
+        </div>
+    </section>
+
+    <footer class="site-footer">
+        <div class="container footer-inner">
+            <p>© Université de Trois-Rivières – 2025</p>
+            <a href="#top" class="footer-link">Retour en haut ↑</a>
+        </div>
+    </footer>
+
+</body>
+</html>
