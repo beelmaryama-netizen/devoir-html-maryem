@@ -41,3 +41,18 @@ Devoir_html_maryem_belouaar/
 │   ├── prof2.jpg
 │   ├── prof3.jpg
 │   └── sport.jpg
+```
+
+---
+
+## Fonctionnalités
+- Navigation responsive
+- Design moderne
+- Sections informatives
+- Mise en page adaptative
+- Interface utilisateur professionnelle
+
+---
+
+## Auteur
+Maryem Belouaar
