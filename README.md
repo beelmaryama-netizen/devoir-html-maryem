@@ -55,4 +55,4 @@ Devoir_html_maryem_belouaar/
 ---
 
 ## Auteur
-Maryem Belouaar
+Maryem Belouaar.
